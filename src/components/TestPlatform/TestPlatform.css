@@ -1,0 +1,690 @@
+/* App.css */
+.fullscreen-enabled {
+  overflow: auto !important;
+  height: 100% !important;
+}
+/* Assessment Platform Styles */
+.assessment-platform {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.recording-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dc3545;
+  margin-right: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.proctoring-alerts {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+}
+
+.camera-popup {
+  background: #000;
+  z-index: 1050;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 1050;
+}
+
+.question-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Fullscreen fixes */
+:fullscreen {
+  overflow: auto !important;
+}
+
+:-webkit-full-screen {
+  overflow: auto !important;
+}
+
+:-moz-full-screen {
+  overflow: auto !important;
+}
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+video {
+  background: #000;
+}
+
+/* Pop-up styles */
+.react-rnd {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.react-rnd video {
+  width: 100%;
+  height: auto;
+}
+
+/* This is for the front camera part */
+.video-preview {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.transcription-box {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  max-width: 600px;
+  margin: auto;
+}
+
+.camera-popup {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.popup-video {
+  width: 100%;
+  height: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.floating-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.floating-btn:hover {
+  background: #0056b3;
+}
+/* Base Styles & Variables */
+:root {
+  --primary-color: #4361ee;
+  --primary-dark: #3a56d4;
+  --danger-color: #f72585;
+  --success-color: #4cc9f0;
+  --warning-color: #f8961e;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+  --gray-color: #6c757d;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header Styles */
+.app-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #3f37c9 100%);
+  color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.header-subtitle {
+  font-weight: 300;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+}
+
+/* Onboarding Flow */
+.onboarding-container {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  margin: 1rem auto;
+  max-width: 800px;
+  animation: slideUp 0.4s ease-out;
+}
+
+.instruction-card, .verification-card, .completion-card {
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  background-color: rgba(248, 249, 250, 0.5);
+  margin-top: 1.5rem;
+}
+
+.instruction-card ul, .recording-tips ul {
+  margin: 1rem 0 1.5rem 1.5rem;
+}
+
+.instruction-card li, .recording-tips li {
+  margin-bottom: 0.5rem;
+}
+
+/* Verification Styles */
+.verification-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--success-color);
+  font-weight: bold;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.consent-section {
+  border-top: 1px solid #eee;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Recording Indicators */
+.recording-status {
+  text-align: center;
+  margin: 2rem 0;
+  animation: fadeIn 0.6s;
+}
+
+.recording-indicator {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1rem;
+}
+
+.recording-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--danger-color);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.recording-tips {
+  background-color: rgba(248, 249, 250, 0.7);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+  text-align: left;
+  display: inline-block;
+}
+
+.recording-tips i {
+  color: var(--warning-color);
+  margin-right: 0.5rem;
+}
+
+/* Completion Screen */
+.completion-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.completion-card {
+  text-align: center;
+  padding: 2.5rem;
+  max-width: 500px;
+}
+
+.completion-icon {
+  font-size: 4rem;
+  color: var(--success-color);
+  margin-bottom: 1.5rem;
+}
+
+.upload-progress {
+  margin: 1.5rem 0;
+}
+
+/* Video Previews */
+.video-preview {
+  width: 100%;
+  max-height: 400px;
+  background-color: black;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 1rem;
+}
+
+.media-playback-section {
+  margin-top: 3rem;
+  animation: fadeIn 0.8s;
+}
+
+/* Camera Popup */
+.camera-popup {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0.50rem;
+  background-color: var(--dark-color);
+  color: white;
+}
+
+.popup-video {
+  width: 100%;
+  height: calc(100% - 42px);
+  object-fit: cover;
+}
+
+/* Buttons & Controls */
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #e3176a;
+}
+
+.btn-secondary {
+  background-color: var(--gray-color);
+  color: white;
+}
+
+.stop-recording-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  display: block;
+}
+
+.recording-controls {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.recording-timer {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--gray-color);
+}
+
+/* Floating Elements */
+.floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--primary-color);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  background: var(--primary-dark);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem 0;
+  }
+  
+  .onboarding-container {
+    padding: 1.5rem;
+  }
+  
+  .media-playback-section .row {
+    flex-direction: column;
+  }
+  
+  .media-playback-section .col-md-6 {
+    margin-bottom: 2rem;
+  }
+  
+  .camera-popup {
+    width: 250px !important;
+    height: 180px !important;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+.mb-3 { margin-bottom: 1rem; }
+.ms-2 { margin-left: 0.5rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* Toast Overrides */
+.Toastify__toast {
+  border-radius: var(--border-radius) !important;
+  font-family: inherit !important;
+}
+
+/* The combined score css styles  */
+/* CandidateScores.css */
+.score-dropdown .dropdown-toggle {
+    min-width: 80px;
+    padding: 0.25rem 0.5rem;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    color: #212529;
+  }
+  
+  .score-dropdown .dropdown-toggle:hover {
+    background-color: #e9ecef;
+  }
+  
+  .score-dropdown .dropdown-menu {
+    min-width: 220px;
+    padding: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .score-dropdown .dropdown-item-text {
+    padding: 0.25rem 1rem;
+    color: #495057;
+  }
+  
+  .score-dropdown .dropdown-header {
+    font-weight: 600;
+    color: #212529;
+    padding: 0.25rem 1rem;
+  }
+  
+  .score-dropdown .dropdown-divider {
+    margin: 0.25rem 0;
+  }
+  
+  .combined-score {
+    color: #0d6efd;
+    font-weight: 600;
+  }
+  
+  .score-value {
+    font-weight: 500;
+  }
+
+
+  /*MCQ Related styles */
+  /* General Styles */
+
+.quiz-wrapper {
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+
+.quiz-container {
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.quiz-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.quiz-header p {
+  font-size: 16px;
+  color: #7f8c8d;
+}
+
+/* Question Card Styles */
+.question-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.question-card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #34495e;
+  margin-bottom: 15px;
+}
+
+/* Option Button Styles */
+.option-button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #34495e;
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover {
+  background: #e9ecef;
+  border-color: #ced4da;
+}
+
+.option-button.selected {
+  background: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+/* Navigation Button Styles */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navigation-buttons button:disabled {
+  background: #bdc3c7;
+  border-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+
+
+/* Result Card Styles */
+.result-card {
+  text-align: center;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.result-card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.result-card p {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.result-card button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.result-card button:hover {
+  background: #2980b9;
+}
+
+/* this is for the interview sylishing*/

@@ -1,0 +1,161 @@
+/* Premium Job Preview Card */
+.preview-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  max-width: 500px;
+  width: 100%;
+}
+
+.preview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.preview-header {
+  padding: 20px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  position: relative;
+}
+
+.preview-header h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.live-badge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  margin-left: auto;
+}
+
+.preview-body {
+  padding: 20px;
+}
+
+/* Company Section - More prominent */
+.company-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #f8f9ff;
+  border-radius: 8px;
+}
+
+.company-icon {
+  color: #6e8efb;
+  font-size: 1.2rem;
+}
+
+.company-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.job-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.meta-icon {
+  color: #6e8efb;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.job-title {
+  font-size: 1.7rem;
+  margin: 0 0 20px 0;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #444;
+  width: 100%;
+}
+
+.detail-item.highlight {
+  background: #f0f4ff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.detail-icon {
+  color: #6e8efb;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.detail-text {
+  text-align: left;
+}
+
+.skills-section, .description-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+.skills-header, .description-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tag {
+  background: #f0f4ff;
+  color: #4a6bdf;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.description-text {
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  white-space: pre-line;
+}
